@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SpecificCategoryFragment">
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="30dp"
+android:orientation="horizontal"
+android:id="@+id/top_lay"
+>
+     <TextView
+         android:layout_width="0dp"
+     android:textColor="#000"
+         android:text="Random"
+         android:layout_weight="1"
+         android:gravity="center"
+         android:layout_height="match_parent" />
+     <View
+         android:layout_width="1dp"
+         android:background="#000"
+         android:layout_gravity="center_vertical"
+         android:layout_height="20dp"/>
+
+     <TextView
+         android:layout_width="0dp"
+         android:textColor="#000"
+         android:text="Popular"
+         android:layout_weight="1"
+         android:gravity="center"
+         android:layout_height="match_parent" />
+     <View
+         android:layout_width="1dp"
+         android:background="#000"
+         android:layout_gravity="center_vertical"
+         android:layout_height="20dp"/>
+
+     <TextView
+         android:layout_width="0dp"
+         android:textColor="#000"
+         android:text="Latest"
+         android:layout_weight="1"
+         android:gravity="center"
+         android:layout_height="match_parent" />
+     <View
+         android:layout_width="1dp"
+         android:background="#000"
+         android:layout_gravity="center_vertical"
+         android:layout_height="20dp"/>
+
+     <TextView
+         android:layout_width="0dp"
+         android:textColor="#000"
+         android:text="Oldest"
+         android:layout_weight="1"
+         android:gravity="center"
+         android:layout_height="match_parent" />
+
+ </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/top_lay"
+        android:id="@+id/cat_recyclerview"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+</RelativeLayout>
