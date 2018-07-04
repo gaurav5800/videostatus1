@@ -1,5 +1,6 @@
 package com.apnasapnamoney.videostatus.adapter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHolder> {
 
     BaseActivity baseActivity;
+    Context context;
     private ArrayList<CategoriesResponse.Categories> categoriesArrayList;
 
     public VideosAdapter(BaseActivity baseActivity, ArrayList<CategoriesResponse.Categories> categoriesArrayList) {
