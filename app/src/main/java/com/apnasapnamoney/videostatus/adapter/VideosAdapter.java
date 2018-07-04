@@ -35,7 +35,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHold
     public VideosAdapter(BaseActivity baseActivity, ArrayList<CategoriesResponse.Categories> categoriesArrayList) {
         this.baseActivity = baseActivity;
         this.categoriesArrayList = categoriesArrayList;
-
+      // sdsad as d
 
     }
 
