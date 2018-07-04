@@ -29,7 +29,7 @@ RecyclerView mRecyclerViewCatagory;
 
     @Override
     protected void initViews(View view) {
-        mRecyclerViewCatagory=view.findViewById(R.id.recycler_view_catagory);
+        mRecyclerViewCatagory=view.findViewById(R.id.cat_recyclerview);
 
     }
 
