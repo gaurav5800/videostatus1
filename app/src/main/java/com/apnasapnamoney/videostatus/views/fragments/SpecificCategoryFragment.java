@@ -14,29 +14,23 @@ import android.widget.RelativeLayout;
 import com.apnasapnamoney.videostatus.R;
 import com.apnasapnamoney.videostatus.adapter.SpecificCategoryAdapter;
 import com.apnasapnamoney.videostatus.adapter.VideosAdapter;
+import com.apnasapnamoney.videostatus.views.BaseFragment;
 
 
-public class SpecificCategoryFragment extends Fragment {
+public class SpecificCategoryFragment extends BaseFragment {
 
-    public SpecificCategoryFragment() {
-        // Required empty public constructor
-    }
-RecyclerView cat_recyclerview;
+
+RecyclerView mRecyclerViewCatagory;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_specific_category, container, false);
-        cat_recyclerview=view.findViewById(R.id.cat_recyclerview);
-        cat_recyclerview.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(),1);
-        cat_recyclerview.setLayoutManager(layoutManager);
+    protected int getLayoutId() {
+        return R.layout.fragment_specific_category;
+    }
 
-        // ArrayList<AndroidVersion> androidVersions = prepareData();
-        //DataAdapter adapter = new DataAdapter(getApplicationContext(),androidVersions);
-        SpecificCategoryAdapter videosAdapter=new SpecificCategoryAdapter(getActivity());
-        cat_recyclerview.setAdapter(videosAdapter);
-        return view;
+    @Override
+    protected void initViews(View view) {
+        mRecyclerViewCatagory=view.findViewById(R.id.recycler_view_catagory);
+
     }
 
 }

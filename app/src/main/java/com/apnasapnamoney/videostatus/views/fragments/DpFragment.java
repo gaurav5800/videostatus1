@@ -13,30 +13,23 @@ import android.view.ViewGroup;
 import com.apnasapnamoney.videostatus.R;
 import com.apnasapnamoney.videostatus.adapter.DpAdapter;
 import com.apnasapnamoney.videostatus.adapter.StatusAdapter;
+import com.apnasapnamoney.videostatus.views.BaseFragment;
 
-public class DpFragment extends Fragment {
+public class DpFragment extends BaseFragment {
 
-    public DpFragment() {
-        // Required empty public constructor
-    }
 
-    RecyclerView dp_recyclerview;
+    RecyclerView mRecyclerViewDp;
+
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_dp, container, false);
-        dp_recyclerview = view.findViewById(R.id.dp_recyclerview);
-        dp_recyclerview.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), 3);
-        dp_recyclerview.setLayoutManager(layoutManager);
+    protected int getLayoutId() {
+        return R.layout.fragment_dp;
+    }
 
-        // ArrayList<AndroidVersion> androidVersions = prepareData();
-        //DataAdapter adapter = new DataAdapter(getApplicationContext(),androidVersions);
-        DpAdapter videosAdapter = new DpAdapter(getActivity());
-        dp_recyclerview.setAdapter(videosAdapter);
-        return view;
+    @Override
+    protected void initViews(View view) {
+        mRecyclerViewDp = view.findViewById(R.id.recycler_view_dp);
+
     }
 
 }

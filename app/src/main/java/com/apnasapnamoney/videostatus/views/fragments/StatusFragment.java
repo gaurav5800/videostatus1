@@ -13,31 +13,30 @@ import android.view.ViewGroup;
 import com.apnasapnamoney.videostatus.R;
 import com.apnasapnamoney.videostatus.adapter.StatusAdapter;
 import com.apnasapnamoney.videostatus.adapter.VideosAdapter;
+import com.apnasapnamoney.videostatus.views.BaseFragment;
 
-public class StatusFragment extends Fragment {
+import java.util.List;
+
+public class StatusFragment extends BaseFragment {
 
 
-    public StatusFragment() {
-        // Required empty public constructor
-    }
 RecyclerView status_recyclerview;
+
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_status, container, false);
-
-        status_recyclerview=view.findViewById(R.id.status_recyclerview);
-        status_recyclerview.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(),3);
-        status_recyclerview.setLayoutManager(layoutManager);
-
-        // ArrayList<AndroidVersion> androidVersions = prepareData();
-        //DataAdapter adapter = new DataAdapter(getApplicationContext(),androidVersions);
-        StatusAdapter videosAdapter=new StatusAdapter(getActivity());
-        status_recyclerview.setAdapter(videosAdapter);
-        return view;
+    protected int getLayoutId() {
+        return R.layout.fragment_status;
     }
 
+    @Override
+    protected void initViews(View view) {
+        status_recyclerview=view.findViewById(R.id.status_recyclerview);
 
+    }
+
+    @Override
+    protected void setGridAdapter(RecyclerView recyclerView, List<?> mList) {
+        super.setGridAdapter(recyclerView, mList);
+
+    }
 }

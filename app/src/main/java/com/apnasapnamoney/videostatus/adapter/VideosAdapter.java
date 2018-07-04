@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHolder> {
 
     BaseActivity baseActivity;
-    Context context;
+
     private ArrayList<CategoriesResponse.Categories> categoriesArrayList;
 
     public VideosAdapter(BaseActivity baseActivity, ArrayList<CategoriesResponse.Categories> categoriesArrayList) {
