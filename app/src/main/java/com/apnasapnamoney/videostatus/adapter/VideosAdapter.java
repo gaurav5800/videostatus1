@@ -21,6 +21,10 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.ArrayList;
 
+/**
+ * @author Gaurav
+ * @version 1.0
+ */
 public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHolder> {
 
     BaseActivity baseActivity;
@@ -29,6 +33,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.MyViewHold
     public VideosAdapter(BaseActivity baseActivity, ArrayList<CategoriesResponse.Categories> categoriesArrayList) {
         this.baseActivity = baseActivity;
         this.categoriesArrayList = categoriesArrayList;
+
 
     }
 
