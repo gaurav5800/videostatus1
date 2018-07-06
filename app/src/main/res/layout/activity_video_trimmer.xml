@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RelativeLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/backBtn"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/ic_arrow_back_black"
+                android:padding="10dp" />
+
+            <!-- <TextView
+                 android:id="@+id/regText"
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:layout_centerInParent="true"
+                 android:gravity="center"
+                 android:padding="10dp"
+                 android:text="Trim Video"
+                 android:textColor="@color/whitetransparent"
+                 android:textSize="18sp"
+                 android:textStyle="bold" />-->
+            <ImageView
+                android:id="@+id/icon_video_play"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/play_button" />
+
+            <TextView
+                android:id="@+id/done_crop_txt"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="Done"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title_layout">
+
+            <life.knowledge4.videotrimmer.K4LVideoTrimmer
+                android:id="@+id/videoTimeLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/bottomLayout1" />
+
+            <!-- <life.knowledge4.videotrimmer.K4LVideoTrimmer
+                 android:id="@+id/imageTimeLine"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_above="@+id/bottomLayout1"
+                 android:visibility="gone" />-->
+
+            <LinearLayout
+                android:id="@+id/bottomLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_above="@+id/bottomLayout"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/trim_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Trim"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cover_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Cover"
+                    android:visibility="gone"
+                    android:textColor="@color/gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <View
+                    android:id="@+id/trim_view"
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:layout_weight="1"
+                    android:background="@color/gray" />
+
+                <View
+                    android:id="@+id/cover_view"
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:layout_weight="1"
+                    android:background="#737373" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </RelativeLayout>

@@ -28,7 +28,7 @@ public class DpFragment extends BaseFragment {
 
     @Override
     protected void initViews(View view) {
-        mRecyclerViewDp = view.findViewById(R.id.recycler_view_dp);
+        mRecyclerViewDp = view.findViewById(R.id.dp_recyclerview);
 
     }
 

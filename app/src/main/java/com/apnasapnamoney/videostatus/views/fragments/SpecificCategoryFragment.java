@@ -18,9 +18,7 @@ import com.apnasapnamoney.videostatus.views.BaseFragment;
 
 
 public class SpecificCategoryFragment extends BaseFragment {
-
-
-RecyclerView mRecyclerViewCatagory;
+    private RecyclerView mRecyclerViewCatagory;
 
     @Override
     protected int getLayoutId() {
@@ -29,8 +27,8 @@ RecyclerView mRecyclerViewCatagory;
 
     @Override
     protected void initViews(View view) {
-        mRecyclerViewCatagory=view.findViewById(R.id.recycler_view_catagory);
-
+        mRecyclerViewCatagory = view.findViewById(R.id.cat_recyclerview);
     }
+
 
 }
