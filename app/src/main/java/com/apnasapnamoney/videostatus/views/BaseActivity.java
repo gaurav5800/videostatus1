@@ -80,7 +80,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Disposab
         getWindow().setBackgroundDrawable(null);
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         mDialog = new ProgressDialog(this);
         mDialog.setCancelable(false);
         mDialog.setMessage(getResources().getString(R.string.please_wait_meassge));
