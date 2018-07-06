@@ -29,6 +29,7 @@ import com.apnasapnamoney.videostatus.videotrimmer.VideoTrimmerActivity;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class UploadVideoActivity extends BaseActivity implements CategoryApi.CategoriesInterface, AdapterView.OnItemSelectedListener, View.OnClickListener {
@@ -39,6 +40,7 @@ public class UploadVideoActivity extends BaseActivity implements CategoryApi.Cat
     private String categoryName;
     private ImageView mImagView;
     private Uri originalVideoUri;
+    private File file;
 
     @Override
     protected int getLayoutId() {
@@ -54,13 +56,9 @@ public class UploadVideoActivity extends BaseActivity implements CategoryApi.Cat
         catgorieSpinner.setOnItemSelectedListener(this);
         mImagView = findViewById(R.id.image_view_video_title);
         mImagView.setOnClickListener(this);
+        findViewById(R.id.btn_add_group).setOnClickListener(this);
+
         findViewById(R.id.image_view_back_arrow).setOnClickListener(this);
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
         if (!Utilities.checkInternet(this)) {
             showToast(R.string.no_internet_connection);
         } else {
@@ -160,6 +158,17 @@ public class UploadVideoActivity extends BaseActivity implements CategoryApi.Cat
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+
+            case R.id.btn_add_group:
+                HashMap<String,String> videoHashMap=new HashMap<>();
+                videoHashMap.put("email","gaurav@gmail.com");
+                videoHashMap.put("category",categoryName);
+                videoHashMap.put("name","cc");
+                videoHashMap.put("title","video");
+                UploadVideoApi uploadVideoApi = new UploadVideoApi(this);
+                uploadVideoApi.uploadFile(videoHashMap,categoryName,file);
+
+                break;
             case R.id.image_view_back_arrow:
                 finish();
                 break;
@@ -210,9 +219,8 @@ public class UploadVideoActivity extends BaseActivity implements CategoryApi.Cat
         //Bitmap bitmap1 = mediaMetadataRetriever.getFrameAtTime(2000, MediaMetadataRetriever.OPTION_CLOSEST_SYNC);
 
         //var path=FileUtils.getPath(baseActivity,croppedVideoUri)
-        File file = new File(data.getData().getPath());
-        UploadVideoApi uploadVideoApi = new UploadVideoApi(this);
-        uploadVideoApi.uploadFile(file);
+          file = new File(data.getData().getPath());
+
         mImagView.setImageBitmap(bitmap);
     }
 }
