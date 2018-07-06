@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +42,7 @@ public class UploadVideoActivity extends BaseActivity implements CategoryApi.Cat
     private ImageView mImagView;
     private Uri originalVideoUri;
     private File file;
+    private EditText mVideoTitleEditText,mEmailEditText,mNameEditText;
 
     @Override
     protected int getLayoutId() {
